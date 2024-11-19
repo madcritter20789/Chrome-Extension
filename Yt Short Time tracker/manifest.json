@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Shorts Timer",
+    "version": "1.1",
+    "description": "Closes YouTube Shorts tab after 5 minutes of watch time.",
+    "permissions": ["tabs", "activeTab", "storage", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "*://*.youtube.com/shorts/*",
+      "*://*.instagram.com/reels/*",
+      "*://*.twitter.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/shorts/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "48": "icons/icon.png"
+    }
+  }
+  
